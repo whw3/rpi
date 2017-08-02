@@ -17,13 +17,3 @@
 # alias cp='cp -i'
 # alias mv='mv -i'
 alias l='ls -Fal'
-alias ns='netstat -epan|grep -v unix'
-alias restart='systemctl restart'
-alias status='systemctl -l status'
-alias enable='systemctl enable'
-alias disable='systemctl disable'
-alias start='systemctl start'
-alias stop='systemctl stop'
-alias j='journalctl'
-alias site='nginx-sites'
-
