@@ -14,3 +14,5 @@ COPY root /root
 
 ENTRYPOINT ["/bin/bash"]
 ```
+# whw3/rpi-s6
+Same Raspbian Base Image as above, but also adds [s6-overlay](https://github.com/just-containers/s6-overlay) 
