@@ -29,7 +29,7 @@ RUN apt-get update && apt-get upgrade\
  && rm -r /var/lib/apt/lists/*
 
 COPY root /root
-RUN echo "$TZ" > /etc/timezone; cp /usr/share/zoneinfo/$TZ /etc/localtime && exit 0 ; exit 1
+RUN chmod 0700 /root/bin/tzconfig && echo "$TZ" > /etc/timezone; cp /usr/share/zoneinfo/$TZ /etc/localtime && exit 0 ; exit 1
 ENTRYPOINT ["/bin/bash"]
 EOF
 echo "Building..."
