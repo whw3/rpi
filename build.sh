@@ -28,9 +28,9 @@ RUN apt-get update && apt-get upgrade\
  && apt-get clean \
  && rm -r /var/lib/apt/lists/*
 
-COPY root /root
+COPY root /root/
 RUN chmod 0700 /root/bin/tzconfig && echo "$TZ" > /etc/timezone; cp /usr/share/zoneinfo/$TZ /etc/localtime && exit 0 ; exit 1
-ENTRYPOINT ["/bin/bash"]
+CMD ["/bin/bash"]
 EOF
 echo "Building..."
 docker build -t whw3/rpi .
