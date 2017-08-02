@@ -1,7 +1,7 @@
 # whw3/rpi
 Raspbian Base Image -- adds wget support missing from resin/rpi-raspbian
 
-Also adds properly configured Timezone setup
+Also adds properly configured Timezone setup. Can be reconfigured inside container by running /root/bin/tzconfig
 ```
 FROM resin/rpi-raspbian
 RUN apt-get update\
