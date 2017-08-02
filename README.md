@@ -10,9 +10,10 @@ RUN apt-get update\
  && apt-get clean \
  && rm -r /var/lib/apt/lists/*
 
-COPY root /root
-
-ENTRYPOINT ["/bin/bash"]
+COPY root /root/
+RUN chmod 0700 /root/bin/tzconfig && echo "America/Chicago" > /etc/timezone;\
+ cp /usr/share/zoneinfo/America/Chicago /etc/localtime && exit 0 ; exit 1
+CMD ["/bin/bash"]
 ```
 # whw3/rpi-s6
 Same Raspbian Base Image as above, but also adds [s6-overlay](https://github.com/just-containers/s6-overlay) 
