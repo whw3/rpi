@@ -1,7 +1,9 @@
 #/bin/bash
 if  [[ "$(which jq)" = "" ]]; then
-	apt-get update
-	apt-get install -y jq
+    whiptail --title "Missing Required File" --yesno "jq is required for this script to function.\nShould I install it for you?" 8 48 "$TZ"  3>&1 1>&2 2>&3
+    exitstatus=$?; if [ $exitstatus = 1 ]; then exit 1; fi
+    apt-get update
+    apt-get install -y jq
 fi
 TZ=""
 while [ "$TZ" = "" ]
