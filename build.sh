@@ -43,6 +43,7 @@ cat << EOF > Dockerfile
 FROM whw3/rpi
 ADD s6-overlay-$S6_VERSION-armhf.tar.gz /
 COPY 01-docker-entrypoint.sh /etc/cont-init.d
+RUN chmod +x /etc/cont-init.d/01-docker-entrypoint.sh
 ENTRYPOINT ["/init"]
 EOF
 
